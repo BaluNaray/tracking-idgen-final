@@ -36,8 +36,9 @@ public class TrackingIdController {
     	
         String trackingNumber = trackingIdService.generateTrackingNumber();
         log.info("trackingNumber = "+trackingNumber);
+        log.info("Request Data = "+request.toString());
         
-        log.info("Time = "+request.getCreatedAt()+"-");
+        log.info("Time = "+request.getCreatedAt());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssX");
         //yyyy-MM-dd'T'HH:mmX
         Instant createdAt = Instant.parse(request.getCreatedAt().format(formatter));
